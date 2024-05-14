@@ -1,3 +1,22 @@
+/* Stili per dispositivi mobili */
+@media only screen and (max-width: 600px) {
+    @import url('style-mobile.css');
+  }
+  
+  /* Stili per tablet */
+  @media only screen and (min-width: 601px) and (max-width: 1024px) {
+    @import url('style-tablet.css');
+  }
+  
+  /* Stili per desktop */
+  @media only screen and (min-width: 1025px) {
+    @import url('styles_desktop.css');
+  }
+  
+
+
+
+  
 /* Palette
 #022C43
 #053F5E
