@@ -1,14 +1,73 @@
-/* Stili per dispositivi mobili */
-@media only screen and (max-width: 600px) {
+/*
+=================================================
+RESET
+=================================================
+*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+=================================================
+MEDIA QUERY
+=================================================
+*/
+/* Styles for mobile */
+@media only screen and (max-width: 768px) {
     @import url('style-mobile.css');
   }
   
-  /* Stili per tablet */
-  @media only screen and (min-width: 601px) and (max-width: 1024px) {
+  /* Styles for tablet */
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
     @import url('style-tablet.css');
   }
   
-  /* Stili per desktop */
+  /* Styles for desktop */
   @media only screen and (min-width: 1025px) {
     @import url('styles_desktop.css');
   }
@@ -16,123 +75,234 @@
 
 
 
-  
-/* Palette
-#022C43
-#053F5E
-#115173
-#FFD700
+/*
+=================================================
+PALETTE 
+=================================================
 */
+:root {
+    --sidenav-bg-color: #022C43;
+    --main-page-bg-color: #053F5E;
+    --footer-and-pj-bg-color: #115173;
+    --text-color: #FFD700;
+}
 
-/* Center the elements in the sidenav */
+/*
+=================================================
+SIDENAV 
+=================================================
+*/
+/*
+------------------------------------
+general
+------------------------------------
+*/
 #sidenav {
     position: fixed;
-    top: 0;
     left: 0;
-    width: 200px;
-    height: 100%;
-    background-color: #022C43;
-    border-right: black 7px solid;
-    padding: 20px;
-    box-sizing: border-box;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    background-color: var(--sidenav-bg-color);
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-/* Style for the name */
-#my-name {
-    font-size: 1.2em;
-    margin-top: 10px;
-    color: white;
-}
-
-#profile-pic {
-    background-color: aliceblue;
-    border-radius: 70px;
+    border-right: black 10px solid;
+  }
+  
+/*
+---------------------------------
+name and pic
+---------------------------------
+*/
+  #profile-pic {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 75px;
     border: black 5px solid;
-}
+  }
 
-/* Style for the divider */
-#socials-divider {
-    width: 100%;
-    border-top: 1px solid #fff;
+  #my-name {
+    font-size: 20px;
+    color: white;
+  }
+
+
+  /*
+  ------------------------------------
+  dividers hr
+  ------------------------------------
+  */
+  #name-socials-divider,
+  #socials-skills-divider {
+    margin-top: 45px;
+    margin-bottom: 45px;
+    width: 90%;
+    border-top: 1px solid white;
+  }
+
+  /*
+  ------------------------------------
+  page links and socials
+  ------------------------------------
+  */
+  #sidenav a {
+    color: var(--text-color); /* Set text color */
+    text-decoration: none; /* Remove underline */
+    margin-bottom: 10px; /* Add some space between each item */
+  }
+  
+  #socials-list {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    line-height: 24px;
+  }
+  
+  #socials-list li {
+    margin-bottom: 10px; /* Add some space between each social media icon */
+  }
+  
+  #socials-list img {
+    margin-right: 5px; /* Add some space between the icon and the text */
+    vertical-align: middle;
+  }
+  
+  #page-links li{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
     margin: 20px 0;
+  }
+
+  /*
+  ------------------------------------
+  hover
+  ------------------------------------
+  */
+  #sidenav a {
+    color: var(--text-color); /* Set default text color */
+    text-decoration: none; /* Remove underline */
+    margin-bottom: 10px; /* Add some space between each item */
+    transition: color 0s, text-shadow 0.3s, text-decoration 0.3s; /* Add transition effect */
+  }
+  
+  #sidenav a:hover {
+    color: white; /* Change text color on hover */
+    text-decoration: underline; /* Underline text on hover */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow on hover */
+  }
+
+
+/*
+=================================================
+MAIN PAGE  
+=================================================
+*/
+#main-page {
+    margin-left: 260px; /* Ensure that the main content is not covered by the sidenav */
+  }
+
+/*
+------------------------------------
+gif
+------------------------------------
+*/
+#gif-main-page {
+    position: fixed;
+    top: 0;
+    left: 250px; /* Adjust to match the width of the sidenav */
+    width: calc(100% - 250px); /* Adjust to subtract the width of the sidenav */
+    height: 100vh; /* Cover the entire viewport vertically */
+    z-index: -1; /* Send the GIF behind other content */
+  }
+  
+  #gif-main-page img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /*
+  *------------------------------------
+  * name and description
+  *------------------------------------
+  */
+  #gif-text {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  #gif-text-name {
+    font-size: 40px;
+    color: white;
+  }
+  
+
+/*
+=================================================
+ABOUT ME 
+=================================================
+*/
+#about-me-section {
+    background-color: var(--main-page-bg-color);
+    color: white;
+    padding: 20px;
+    line-height: 1.5;
+    font-size: 18px;
+    text-align: justify;
+    text-justify: inter-word;
+    word-wrap: break-word;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-bottom: black 5px solid;
 }
 
-/* Style for the social icons */
-#socials-list li img {
-    margin-right: 10px;
+#about-me-pic {
+    float: left; /* Float the image to the left */
+    margin-right: 20px; /* Add margin to the right to create space between the image and the header */
+    width: 100px; /* Adjust the width of the image as needed */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+#about-me-header {
+    margin-top: 20px;
+    margin-bottom: 20px;
     vertical-align: middle;
 }
 
-/* Adjust styles for the social links */
-#socials {
-    margin-bottom: 20px;
-}
+/*
+=================================================
+SKILLS 
+=================================================
+*/
 
-/* Adjust styles for the page links */
-#page-links {
-    padding-left: 0;
-    list-style: none;
-}
+/*
+=================================================
+LANGUAGES  
+=================================================
+*/
 
-#page-links li {
-    margin-bottom: 10px;
-}
+/*
+=================================================
+PROJECTS
+=================================================
+*/
 
-/* Style for the main content */
-#main-page {
-    margin-left: 180px;
-    margin-top: -8px;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: #053F5E;
-    width: calc(100% - 180px);
-}
-
-/* Style for the footer */
+/*
+=================================================
+FOOTER  
+=================================================
+*/
 #footer {
-    width: calc(100% - 180px);
-    margin-left: 180px;
-    padding: 20px;
-    background-color: #115173;
+    margin-left: 260px;
+    background-color: var(--footer-and-pj-bg-color);
     color: white;
-    box-sizing: border-box;
-    clear: both;
-}
+  }
 
-/* Style for centering the chart */
-#chart-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 500px;
-}
 
-/* Responsive styles */
-@media (max-width: 768px) {
-    #sidenav {
-        width: 100%;
-        height: auto;
-        position: relative;
-        border-right: none;
-        border-bottom: black 7px solid;
-    }
-
-    #main-page {
-        margin-left: 0;
-        width: 100%;
-    }
-
-    #footer {
-        margin-left: 0;
-        width: 100%;
-    }
-
-    #chart-container {
-        height: auto;
-    }
-}
