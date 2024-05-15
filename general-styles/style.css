@@ -102,13 +102,13 @@ general
     left: 0;
     top: 0;
     bottom: 0;
-    width: 250px;
+    width: 255px;
     background-color: var(--sidenav-bg-color);
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-right: black 10px solid;
+    border-right: black 5px solid;
   }
   
 /*
@@ -117,7 +117,7 @@ name and pic
 ---------------------------------
 */
   #profile-pic {
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 10px;
     background-color: white;
     border-radius: 75px;
@@ -203,6 +203,7 @@ MAIN PAGE
 */
 #main-page {
     margin-left: 260px; /* Ensure that the main content is not covered by the sidenav */
+    overflow: hidden;
   }
 
 /*
@@ -230,17 +231,38 @@ gif
   *------------------------------------
   */
   #gif-text {
+    height: 200px;
+    transform: translate(-50%, 0);
+    padding: 400px 0; /* centered the name and description in front of the gif*/
     position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
+    color: var(--text-color);
+    
   }
   
   #gif-text-name {
-    font-size: 40px;
+    font-size: 40px; 
     color: white;
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    animation: fadeIn 1s ease forwards; 
+    color: var(--text-color);
+    background-color: #000000;
   }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0; 
+    }
+    to {
+      opacity: 1; 
+    }
+  }
+  
   
 
 /*
@@ -261,19 +283,42 @@ ABOUT ME
     overflow-y: auto;
     overflow-x: hidden;
     border-bottom: black 5px solid;
+    border-top: black 5px solid;
 }
 
-#about-me-pic {
-    float: left; /* Float the image to the left */
-    margin-right: 20px; /* Add margin to the right to create space between the image and the header */
-    width: 100px; /* Adjust the width of the image as needed */
-    height: auto; /* Maintain the aspect ratio */
-}
-
+/*
+*------------------------------------
+* about me header
+*------------------------------------
+*/
 #about-me-header {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    vertical-align: middle;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+
+
+/*
+*------------------------------------
+* container for about me
+*------------------------------------
+*/
+#about-me-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+#about-me-text {
+    padding: 20px;
+    line-height: 1.5;
+    font-size: 18px;
+    text-align: justify;
+    text-justify: inter-word;
+    word-wrap: break-word;
 }
 
 /*
@@ -281,18 +326,280 @@ ABOUT ME
 SKILLS 
 =================================================
 */
+/*
+*------------------------------------
+* container for skills
+*------------------------------------
+*/
+#skills-section-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  background-color: var(--main-page-bg-color);
+}
+
+/*
+*------------------------------------
+* skills pic
+*------------------------------------
+*/
+#skills-pic {
+    height: 100px;
+    background-color: #FFD700;
+    border-radius: 100%;
+    border: #000000 5px solid;
+    padding: 20px;
+}
+
+/*
+*------------------------------------
+* skills header
+*------------------------------------
+*/
+#skills-header {
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+/*
+*------------------------------------
+* skills text
+*------------------------------------
+*/
+#skills-text {
+    padding: 20px;
+    line-height: 1.5;
+    font-size: 18px;
+    text-align: justify;
+    text-justify: inter-word;
+    word-wrap: break-word;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    color: white;
+    background-color: var(--main-page-bg-color);
+}
+
+/*
+*------------------------------------
+* progress bars
+*------------------------------------
+*/
+.wrapper {
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  margin:auto auto auto 1000px;
+  background-color: var(--main-page-bg-color);
+  flex-direction: column;
+}
+.progress-bar {
+  width: 50%;
+  height: 20px;
+  border-radius: 50px;
+  overflow: hidden;
+  border: 5px solid var(--sidenav-bg-color);
+  padding: 6px;
+}
+#progress-1 {
+  height: 100%;
+  border-radius: 10px;
+  background-color: var(--text-color);
+  animation: animate-1 1s linear forwards;
+}
+#progress-2,
+#progress-3 {
+  height: 100%;
+  border-radius: 10px;
+  background-color: var(--text-color);
+  animation: animate-2-3 1s linear forwards;
+}
+#progress-4 {
+  height: 100%;
+  border-radius: 10px;
+  background-color: var(--text-color);
+  animation: animate-4 1s linear forwards;
+}
+.skill-level-text {
+  padding-top: 10px;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 5px;
+  color: white;
+}
+#progress-5,
+#progress-6 {
+  height: 100%;
+  border-radius: 10px;
+  background-color: var(--text-color);
+  animation: animate-5-6 1s linear forwards;
+}
+@keyframes animate-1 {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 90%;
+  }
+}
+@keyframes animate-2-3 {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 55%;
+  }
+}
+@keyframes animate-4 {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 35%;
+  }
+}
+@keyframes animate-5-6 {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 25%;
+  }
+}
+.skill-name {
+  padding-top: 10px;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 5px;
+  color: white;
+}
+.skill-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 20px;
+  background-color: var(--main-page-bg-color);
+}
+
+/*
+*------------------------------------
+* left and right side adjustments
+*------------------------------------
+*/
+
+
+/*
+*------------------------------------
+* bars and names adjustments
+*------------------------------------
+*/
+.skill-name {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  margin-right: -900px;
+}
+
+
 
 /*
 =================================================
 LANGUAGES  
 =================================================
 */
+#languages-section {
+  background-color: var(--main-page-bg-color);
+  color: white;
+  padding: 20px;
+  line-height: 1.5;
+  font-size: 18px;
+  text-align: justify;
+  text-justify: inter-word;
+  word-wrap: break-word;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-top: black 5px solid;
+}
+
+#languages-section-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  background-color: var(--main-page-bg-color);
+}
+.language-name {
+  padding-top: 10px;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 5px;
+  color: white;
+}
+.language-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 20px;
+  background-color: var(--main-page-bg-color);
+}
+
+#languages-header {
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+
+#languages-pic {
+  height: 100px;
+    padding: 20px;
+}
+/*
+*------------------------------------
+* container for languages
+*------------------------------------
+*/
+#progress-7,
+#progress-8 {
+  height: 100%;
+  border-radius: 10px;
+  background-color: var(--text-color);
+  animation: animate-7-8 1s linear forwards;
+}
+@keyframes animate-7-8 {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+
 
 /*
 =================================================
 PROJECTS
 =================================================
 */
+/*
+*------------------------------------
+* container for projects
+*------------------------------------
+*/
+
+
+
+
 
 /*
 =================================================
@@ -303,6 +610,51 @@ FOOTER
     margin-left: 260px;
     background-color: var(--footer-and-pj-bg-color);
     color: white;
+    padding: 20px;
+    border-top: black 5px solid;
+    border-bottom: black 5px solid;
   }
 
 
+/*
+=================================================
+RETURN BUTTON
+=================================================
+*/
+#return-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--text-color);
+  border-radius: 50%;
+  border: #000000 3px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 999; /* Ensure the button stays above other content */
+}
+
+#return-button svg {
+  width: 30px; /* Adjust the size of the icon */
+  height: auto; /* Maintain aspect ratio */
+  filter: invert(100%); /* Invert the color of the icon */
+  translate: 10px 9px;
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+  }
+  60% {
+    transform: translateX(0%);
+  }
+  80% {
+    transform: translateX(8%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}

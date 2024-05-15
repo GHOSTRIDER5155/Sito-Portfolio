@@ -26,7 +26,11 @@
                 alt=""
                 width="24"
                 height="24"
-              /><a href="">☞ Instagram</a>
+              /><a
+                href="https://www.instagram.com/your_buffed_metalhead_/"
+                target="_blank"
+                >☞ Instagram</a
+              >
             </li>
             <li>
               <img
@@ -35,7 +39,11 @@
                 alt=""
                 width="24"
                 height="24"
-              /><a href="">☞ Facebook</a>
+              /><a
+                href="https://www.facebook.com/gabriel.nilli/?locale=it_IT"
+                target="_blank"
+                >☞ Facebook</a
+              >
             </li>
             <li>
               <img
@@ -44,7 +52,9 @@
                 alt=""
                 width="24"
                 height="24"
-              /><a href="">☞ GitHub</a>
+              /><a href="https://github.com/GHOSTRIDER5155" target="_blank"
+                >☞ GitHub</a
+              >
             </li>
             <li>
               <img
@@ -53,16 +63,16 @@
                 alt=""
                 width="24"
                 height="24"
-              /><a href="">☞ Mail</a>
+              /><a href="mailto:gabbonilli@gmail.com">☞ Mail</a>
             </li>
           </ul>
         </div>
         <hr id="socials-skills-divider" />
         <ul id="page-links">
-          <li><a href="">About Me</a></li>
-          <li><a href="">My Skills</a></li>
-          <li><a href="">Languages</a></li>
-          <li><a href="">My Projects</a></li>
+          <li><a href="#about-me-section">About Me</a></li>
+          <li><a href="#skills-section-container">My Skills</a></li>
+          <li><a href="#languages-section">Languages</a></li>
+          <li><a href="#projects-section">My Projects</a></li>
         </ul>
       </div>
       <div id="main-page">
@@ -77,8 +87,14 @@
           </p>
         </div>
         <div id="about-me-section">
-          <img src="/images/about-me-pic.png" alt="About me pic" />
-          <h2 id="about-me-header">About me</h2>
+          <div id="about-me-container">
+            <img
+              id="about-me-pic"
+              src="/images/about-me-pic.png"
+              alt="About me pic"
+            />
+            <h2 id="about-me-header">About me</h2>
+          </div>
           <p id="about-me-text">
             Welcome to my corner of the web! <br />
             As a junior web developer, I'm passionate about crafting immersive
@@ -97,8 +113,194 @@
             Let's build something amazing together.
           </p>
         </div>
-        <div class="skills-section"></div>
-        <div id="return-button"></div>
+        <div id="skills-section-container">
+          <img id="skills-pic" src="/images/skills-pic.png" alt="skills pic" />
+          <h2 id="skills-header">My Skills</h2>
+        </div>
+        <p id="skills-text">
+          Proficient in C++, HTML, CSS, JavaScript, PHP, and SQL/NoSQL, I
+          specialize in creating robust and interactive web applications.
+          <br />
+          With expertise spanning front-end and back-end development, along with
+          database management, I excel in delivering comprehensive solutions
+          tailored to project requirements.
+        </p>
+        <!-- sliders for the skills -->
+        <!-- All credits to https://www.youtube.com/watch?v=9b38o6ckrxc&t=4s -->
+        <div id="skills-container-left-right">
+          <!-- left side -->
+          <div id="left-side-skills-container">
+            <ul id="left-side-skills">
+              <!-- Skill 1 -->
+              <li id="skill-1-c++">
+                <div class="skill-container">
+                  <p class="skill-name">C++</p>
+                  <div class="wrapper">
+                    <div class="progress-bar">
+                      <div id="progress-1" style="width: 0"></div>
+                    </div>
+                    <div class="skill-level-text">
+                      Beginner --------------------- Intermediate
+                      --------------------- Advanced
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!-- Skill 2 -->
+              <li id="skill-2-html">
+                <div class="skill-container">
+                  <p class="skill-name">HTML</p>
+                  <div class="wrapper">
+                    <div class="progress-bar">
+                      <div id="progress-2" style="width: 0"></div>
+                    </div>
+                    <div class="skill-level-text">
+                      Beginner --------------------- Intermediate
+                      --------------------- Advanced
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!-- Skill 3 -->
+              <li id="skill-3-css">
+                <div class="skill-container">
+                  <p class="skill-name">CSS</p>
+                  <div class="wrapper">
+                    <div class="progress-bar">
+                      <div id="progress-3" style="width: 0"></div>
+                    </div>
+                    <div class="skill-level-text">
+                      Beginner --------------------- Intermediate
+                      --------------------- Advanced
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- right side -->
+          <div id="right-side-skills-container">
+            <ul id="right-side-skills">
+              <!-- Skill 4 -->
+              <li id="skill-4-javascript">
+                <div class="skill-container">
+                  <p class="skill-name">JavaScript</p>
+                  <div class="wrapper">
+                    <div class="progress-bar">
+                      <div id="progress-4" style="width: 0"></div>
+                    </div>
+                    <div class="skill-level-text">
+                      Beginner --------------------- Intermediate
+                      --------------------- Advanced
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!-- Skill 5 -->
+              <li id="skill-5-php">
+                <div class="skill-container">
+                  <p class="skill-name">PHP</p>
+                  <div class="wrapper">
+                    <div class="progress-bar">
+                      <div id="progress-5" style="width: 0"></div>
+                    </div>
+                    <div class="skill-level-text">
+                      Beginner --------------------- Intermediate
+                      --------------------- Advanced
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!-- Skill 6 -->
+              <li id="skill-6-sql">
+                <div class="skill-container">
+                  <p class="skill-name">SQL / NoSQL</p>
+                  <div class="wrapper">
+                    <div class="progress-bar">
+                      <div id="progress-6" style="width: 0"></div>
+                    </div>
+                    <div class="skill-level-text">
+                      Beginner --------------------- Intermediate
+                      --------------------- Advanced
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="languages-section">
+          <div id="languages-section-container">
+            <img src="/images/languages-pic.png" alt="languages pic" />
+            <h2 id="languages-header">Languages</h2>
+          </div>
+          <div id="languages-list-container">
+            <ul id="languages-list">
+              <li id="language-1-italian">
+                <div class="language-container">
+                  <p class="language-name">Italian</p>
+                  <div class="wrapper">
+                    <div class="progress-bar">
+                      <div id="progress-7" style="width: 0"></div>
+                    </div>
+                    <div class="skill-level-text">
+                      Beginner --------------------- Intermediate
+                      --------------------- Advanced
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li id="language-2-english">
+                <div class="language-container">
+                  <p class="language-name">English</p>
+                  <div class="wrapper">
+                    <div class="progress-bar">
+                      <div id="progress-8" style="width: 0"></div>
+                    </div>
+                    <div class="skill-level-text">
+                      Beginner --------------------- Intermediate
+                      --------------------- Advanced
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="return-button" style="display: none">
+          <a href="#">
+            <svg
+              fill="#000000"
+              height="75px"
+              width="75px"
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="-51.2 -51.2 614.40 614.40"
+              xml:space="preserve"
+              transform="rotate(90)"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke="#CCCCCC"
+                stroke-width="5.12"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <g>
+                  <g>
+                    <path
+                      d="M317.959,115.859H210.158V58.365h-44.864L0,223.66l165.294,165.294h44.864V331.46h136.548 c67.367,0,122.174,54.807,122.174,122.174H512V309.9C512,202.905,424.953,115.859,317.959,115.859z M468.88,342.412 c-30.253-33.206-73.82-54.071-122.174-54.071H167.038v41.378L60.981,223.661l106.057-106.057v41.375h150.921 c83.219,0,150.921,67.703,150.921,150.921V342.412z"
+                    ></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
     <footer id="footer">
@@ -118,3 +320,11 @@
     </footer>
   </body>
 </html>
+
+<!-- 
+Special thanks to:
+- Marco Giannitti
+- Alessia Bilardi
+- Vincenzo Bonura
+- Valentin Sorohan
+-->
