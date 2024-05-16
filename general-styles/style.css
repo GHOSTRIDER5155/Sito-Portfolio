@@ -102,13 +102,13 @@ general
     left: 0;
     top: 0;
     bottom: 0;
-    width: 255px;
+    width: 13%;
     background-color: var(--sidenav-bg-color);
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-right: black 5px solid;
+    border: black 5px solid;
   }
   
 /*
@@ -119,9 +119,9 @@ name and pic
   #profile-pic {
     margin-top: 40px;
     margin-bottom: 10px;
-    background-color: white;
-    border-radius: 75px;
+    border-radius: 100%;
     border: black 5px solid;
+    height: 15%;
   }
 
   #my-name {
@@ -202,10 +202,10 @@ MAIN PAGE
 =================================================
 */
 #main-page {
-    margin-left: 260px; /* Ensure that the main content is not covered by the sidenav */
-    overflow: hidden;
+    margin-left: 13%; /* Ensure that the main content is not covered by the sidenav */
+    width: 87%;
+    overflow: hidden; 
   }
-
 /*
 ------------------------------------
 gif
@@ -214,8 +214,7 @@ gif
 #gif-main-page {
     position: fixed;
     top: 0;
-    left: 250px; /* Adjust to match the width of the sidenav */
-    width: calc(100% - 250px); /* Adjust to subtract the width of the sidenav */
+    width: 87%; /* Adjust to subtract the width of the sidenav */
     height: 100vh; /* Cover the entire viewport vertically */
     z-index: -1; /* Send the GIF behind other content */
   }
@@ -223,6 +222,7 @@ gif
   #gif-main-page img {
     width: 100%;
     height: 100%;
+    filter: brightness(50%);
   }
 
   /*
@@ -230,38 +230,69 @@ gif
   * name and description
   *------------------------------------
   */
-  #gif-text {
-    height: 200px;
-    transform: translate(-50%, 0);
-    padding: 400px 0; /* centered the name and description in front of the gif*/
-    position: relative;
-    top: 50%;
-    left: 50%;
-    text-align: center;
-    color: var(--text-color);
-    
-  }
-  
-  #gif-text-name {
-    font-size: 40px; 
-    color: white;
-    position: absolute; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    animation: fadeIn 1s ease forwards; 
-    color: var(--text-color);
-    background-color: #000000;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0; 
-    }
-    to {
-      opacity: 1; 
-    }
-  }
+
+  @import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
+body {
+  font-family:'Roboto';
+  background-color: #131417;  
+}
+p {
+  text-shadow: 0 0 7px rgba(255,255,255,.3), 0 0 3px rgba(255,255,255,.3);
+}
+.container-gif-text {
+  color: #e5e5e5;
+  font-size: 2.26rem;
+  text-transform: uppercase;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animation {
+  height:54px;
+  overflow:hidden;
+  margin-left: 1rem;
+}
+
+.animation > div > div {
+  padding: 0.3rem 0.7rem;
+  height:2.5rem;
+  margin-bottom: 2.9rem;
+  display:inline-block;
+}
+
+.animation div:first-child {
+  animation: text-animation 8s infinite;
+}
+
+.first div {
+  background-color:#6b6b6b9c;
+  border: #000000 3px solid;
+}
+.second div {
+  background-color:#6b6b6b9c;
+  border: #000000 3px solid;
+}
+.third div {
+  background-color:#6b6b6b9c;
+  border: #000000 3px solid;
+}
+
+@keyframes text-animation {
+  0% {margin-top: 0;}
+  10% {margin-top: 0;}
+  20% {margin-top: -5.62rem;}
+  30% {margin-top: -5.62rem;}
+  40% {margin-top: -11.24rem;}
+  60% {margin-top: -11.24rem;}
+  70% {margin-top: -5.62rem;}
+  80% {margin-top: -5.62rem;}
+  90% {margin-top: 0;}
+  100% {margin-top: 0;}
+}
+
   
   
 
@@ -282,8 +313,8 @@ ABOUT ME
     width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-    border-bottom: black 5px solid;
     border-top: black 5px solid;
+    border-bottom: black 5px solid;
 }
 
 /*
@@ -320,6 +351,64 @@ ABOUT ME
     text-justify: inter-word;
     word-wrap: break-word;
 }
+/*
+*------------------------------------
+* info
+*------------------------------------
+*/
+#about-me-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; 
+}
+
+#about-me-info {
+  margin: 50px 0;
+  display: flex;
+  align-items: center; 
+  max-width: 800px; 
+}
+
+#about-me-info-pic {
+  margin-right: 50px; 
+}
+
+#about-me-info-pic img {
+  border-radius: 100%;
+  max-width: 150px; 
+  max-height: 150px; 
+}
+
+
+#personal-info {
+  display: flex;
+  width: 100%; 
+  justify-content: center; 
+}
+
+#personal-info-right,
+#personal-info-left {
+  width: 50%; 
+}
+
+#personal-info-right ul,
+#personal-info-left ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#personal-info-right ul li,
+#personal-info-left ul li {
+  margin-bottom: 10px; 
+  text-align: left;
+}
+
+#personal-info-right ul li strong,
+#personal-info-left ul li strong {
+  margin-right: 5px; 
+}
+
 
 /*
 =================================================
@@ -390,15 +479,16 @@ SKILLS
 *------------------------------------
 */
 .wrapper {
-  width: 600px;
+  width: 600px; 
   display: flex;
   justify-content: center;
   align-items: center;
   height: 150px;
-  margin:auto auto auto 1000px;
+  margin: auto;
   background-color: var(--main-page-bg-color);
   flex-direction: column;
 }
+
 .progress-bar {
   width: 50%;
   height: 20px;
@@ -500,11 +590,12 @@ SKILLS
 *------------------------------------
 */
 .skill-name {
+  padding-left: 20%;
+  padding-top: 10px;
   font-size: 18px;
-  font-weight: bold;
   text-align: center;
+  margin-top: 5px;
   color: white;
-  margin-right: -900px;
 }
 
 
@@ -537,10 +628,12 @@ LANGUAGES
   background-color: var(--main-page-bg-color);
 }
 .language-name {
+  padding-left: 20%;
   padding-top: 10px;
   font-size: 18px;
   text-align: center;
   margin-top: 5px;
+  margin-right: 15%;
   color: white;
 }
 .language-container {
@@ -591,11 +684,215 @@ LANGUAGES
 PROJECTS
 =================================================
 */
+#project-section {
+  background-color: var(--main-page-bg-color);
+  color: white;
+  padding: 20px;
+  line-height: 1.5;
+  font-size: 18px;
+  text-align: justify;
+  text-justify: inter-word;
+  word-wrap: break-word;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#project-section-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  background-color: var(--main-page-bg-color);
+  border-top: #000000 5px solid;
+}
+.project-name {
+  padding-top: 10px;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 5px;
+  color: white;
+}
+.project-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 20px;
+  background-color: var(--main-page-bg-color);
+}
+
+#project-header {
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+
+#project-pic {
+  height: 100px;
+    padding: 20px;
+}
+
+#project-text {
+  padding: 20px;
+    line-height: 1.5;
+    font-size: 18px;
+    text-align: justify;
+    text-justify: inter-word;
+    word-wrap: break-word;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    color: white;
+    background-color: var(--main-page-bg-color);
+}
 /*
 *------------------------------------
-* container for projects
+* projects rows and columns
 *------------------------------------
 */
+.project-row {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px; /* Adjust spacing between rows */
+  mask-image: linear-gradient(
+        to bottom, 
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,1) 6%,
+        rgba(0,0,0,1) 100%
+    );
+    padding-top: 20px
+}
+
+.project {
+  width: calc(33.33% - 20px);
+  background-color: var(--footer-and-pj-bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  display: flex; /* Add flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: #000000 3px solid;
+  margin-bottom: 40px;
+}
+
+
+.project img {
+  width: 95%; /* Make the image fill the container */
+  height: 90%; /* Make the image fill the container */
+  border-radius: 10px;
+}
+
+.project-wip {
+  width: calc(33.33% - 20px);
+  background-color: var(--footer-and-pj-bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  display: flex; /* Add flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: #000000 3px solid;
+}
+
+.project-wip-4,
+.project-wip-5,
+.project-wip-6 {
+  width: calc(33.33% - 20px);
+  background-color: var(--footer-and-pj-bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  display: flex; /* Add flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: #000000 3px solid;
+}
+
+.project-wip-4 img,
+.project-wip-5 img,
+.project-wip-6 img{
+  width: 40%; /* Make the image fill the container */
+  height: 60%; /* Make the image fill the container */
+  padding: 40px 0;
+}
+
+.project-wip img {
+  width: 40%; /* Make the image fill the container */
+  height: 60%; /* Make the image fill the container */
+  padding: 40px 0;
+}
+
+/* Add hover effect to the container */
+.project:hover {
+  transform: translateY(-100px); /* Bring the container up by 10 pixels */
+  transition: transform 0.3s ease; /* Add smooth transition */
+  cursor: pointer; 
+}
+
+
+
+.project {
+  position: relative;
+  width: 100%;
+  background-color: var(--footer-and-pj-bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.4);
+  border: #000000 3px solid;
+  z-index: 2; /* Keep it above other elements */
+  
+}
+
+.project img {
+  width: 95%;
+  height: 90%;
+  border-radius: 10px;
+  transition: transform 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.project:hover img {
+  transform: translateY(-20px); /* Move image up on hover */
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project:hover .project-overlay {
+  opacity: 1; /* Show the overlay on hover */
+}
+
+.project-text {
+  margin-top: -80px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  z-index: 1; /* Set a lower z-index to place it behind the container */
+}
+
+.project-container {
+  flex-direction: column;
+}
+
+
+
 
 
 
@@ -607,7 +904,7 @@ FOOTER
 =================================================
 */
 #footer {
-    margin-left: 260px;
+    margin-left: 13%;
     background-color: var(--footer-and-pj-bg-color);
     color: white;
     padding: 20px;
@@ -625,8 +922,8 @@ RETURN BUTTON
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   background-color: var(--text-color);
   border-radius: 50%;
   border: #000000 3px solid;
@@ -641,7 +938,7 @@ RETURN BUTTON
   width: 30px; /* Adjust the size of the icon */
   height: auto; /* Maintain aspect ratio */
   filter: invert(100%); /* Invert the color of the icon */
-  translate: 10px 9px;
+  translate: 7px 6px;
 }
 
 @keyframes slideInRight {
@@ -658,3 +955,4 @@ RETURN BUTTON
     transform: translateX(0%);
   }
 }
+

@@ -2,9 +2,9 @@
 
 ## DA SISTEMARE
 
-- Grafico deve essere grande al centro
-- Grafico in generale
-- Aggiungere contenuti
-- Progress bars debono essere 3 a destra e 3 a sinistra
+- Aggiungere CV da scaricare
+- Progress bars devono essere in linea col testo
 - Scritte sotto progress bars adattabili anche su telefono
 - Aggiustare padding a destra
+- Fixare hover progetti
+- Il button non deve essere istantaneo

@@ -72,19 +72,22 @@
           <li><a href="#about-me-section">About Me</a></li>
           <li><a href="#skills-section-container">My Skills</a></li>
           <li><a href="#languages-section">Languages</a></li>
-          <li><a href="#projects-section">My Projects</a></li>
+          <li><a href="#project-section-container">My Projects</a></li>
         </ul>
       </div>
       <div id="main-page">
         <div id="gif-main-page">
           <img src="/images/coding-gif.gif" alt="bg-image for the main page" />
         </div>
-        <div id="gif-text">
-          <h1 id="gif-text-name">Gabriel Nilli</h1>
-          <p id="gif-text-description">
-            Hi! I'm a
-            <span id="typed">programmer, gamer, creator, junior web-dev</span>
-          </p>
+        <div clss="container-gif">
+          <div class="container-gif-text">
+            <p>Hello 👋 I'm</p>
+            <section class="animation">
+              <div class="first"><div>Gabriel Nilli</div></div>
+              <div class="second"><div>a Web Developer</div></div>
+              <div class="third"><div>a Gamer</div></div>
+            </section>
+          </div>
         </div>
         <div id="about-me-section">
           <div id="about-me-container">
@@ -95,6 +98,31 @@
             />
             <h2 id="about-me-header">About me</h2>
           </div>
+          <div id="about-me-info">
+            <div id="about-me-info-pic">
+              <img src="/images/personal-pic.png" alt="Personal Photo" />
+            </div>
+            <div id="personal-info">
+              <div id="personal-info-right">
+                <ul>
+                  <li><strong>Gender:</strong> Male</li>
+                  <li><strong>Birthday:</strong> 13 March 1999</li>
+                  <li><strong>City:</strong> Turin, Italy</li>
+                </ul>
+              </div>
+              <div id="personal-info-left">
+                <ul>
+                  <li><strong>Nationality:</strong> Italian</li>
+                  <li>
+                    <strong>Degree:</strong> Conduction and construction of
+                    Airplanes
+                  </li>
+                  <li><strong>Freelance:</strong> Available</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
           <p id="about-me-text">
             Welcome to my corner of the web! <br />
             As a junior web developer, I'm passionate about crafting immersive
@@ -267,6 +295,71 @@
             </ul>
           </div>
         </div>
+        <div id="project-section-container">
+          <img
+            id="project-pic"
+            src="/images/project-pic.png"
+            alt="project pic"
+          />
+          <h2 id="project-header">My Projects</h2>
+        </div>
+        <p id="project-text">
+          "Combining web development and modeling, my projects epitomize a
+          synergy of creativity and functionality.
+          <br />
+          Crafting user-friendly websites and intricate digital models, I strive
+          to redefine online experiences with precision and innovation."
+        </p>
+        <div id="project-section">
+          <div class="project-row">
+            <!-- First Row of Projects -->
+            <div class="project-container">
+              <div class="project">
+                <img src="/images/minigun.png" alt="Project 1" />
+                <div class="project-overlay"></div>
+              </div>
+              <p class="project-text">3D-printed Minigun</p>
+            </div>
+            <div class="project-container">
+              <div class="project">
+                <img src="/images/progetto-sito.png" alt="Project 2" />
+                <div class="project-overlay"></div>
+              </div>
+              <p class="project-text">My Website about school</p>
+            </div>
+            <div class="project-container">
+              <div class="project">
+                <img src="/images/wip.png" alt="Project 3" />
+                <div class="project-overlay"></div>
+              </div>
+              <p class="project-text">WIP</p>
+            </div>
+          </div>
+          <div class="project-row">
+            <div class="project-container">
+              <div class="project">
+                <img src="/images/wip.png" alt="Project 4" />
+                <div class="project-overlay"></div>
+              </div>
+              <p class="project-text">WIP</p>
+            </div>
+            <div class="project-container">
+              <div class="project">
+                <img src="/images/wip.png" alt="Project 5" />
+                <div class="project-overlay"></div>
+              </div>
+              <p class="project-text">WIP</p>
+            </div>
+            <div class="project-container">
+              <div class="project">
+                <img src="/images/wip.png" alt="Project 6" />
+                <div class="project-overlay"></div>
+              </div>
+              <p class="project-text">WIP</p>
+            </div>
+          </div>
+        </div>
+
         <div id="return-button" style="display: none">
           <a href="#">
             <svg
@@ -328,3 +421,10 @@ Special thanks to:
 - Vincenzo Bonura
 - Valentin Sorohan
 -->
+
+<!-- 
+  Fonts:
+  MDN
+  W3School
+  Professor Shadi Lahham's PDFs
+ -->

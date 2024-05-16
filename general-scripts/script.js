@@ -11,5 +11,3 @@ window.addEventListener('scroll', function() {
     }
   });
 
-
-// script for the animation of the gif text
