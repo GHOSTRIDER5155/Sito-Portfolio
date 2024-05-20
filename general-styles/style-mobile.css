@@ -1,0 +1,761 @@
+/*
+=================================================
+RESET
+=================================================
+*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+=================================================
+MEDIA QUERY
+=================================================
+*/
+/* Styles for mobile */
+@media only screen and (max-width: 768px) {
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Styles for tablet */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  @import url('style-tablet.css');
+}
+
+/* Styles for desktop */
+@media only screen and (min-width: 1025px) {
+  @import url('styles_desktop.css');
+}
+
+/*
+=================================================
+PALETTE 
+=================================================
+*/
+:root {
+  --sidenav-bg-color: #022C43;
+  --main-page-bg-color: #053F5E;
+  --footer-and-pj-bg-color: #115173;
+  --text-color: #FFD700;
+}
+
+/*
+=================================================
+SIDENAV 
+=================================================
+*/
+#sidenav {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--sidenav-bg-color);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: black 5px solid;
+  }
+
+  #profile-pic {
+    height: 50px;
+  }
+
+  #main-page {
+    margin-left: 0;
+    width: 100%;
+    padding-top: 100vh; /* Space for the GIF section */
+  }
+
+  #gif-main-page {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+  }
+
+  #gif-main-page img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+  }
+
+  .container-gif-text {
+    color: #e5e5e5;
+        font-size: 2.26rem;
+        text-transform: uppercase;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+  }
+
+  #about-me-section,
+  #skills-section-container,
+  #languages-section,
+  #project-section {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  #about-me-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #about-me-info-pic {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  #personal-info {
+    flex-direction: column;
+  }
+
+  #personal-info-right,
+  #personal-info-left {
+    width: 100%;
+  }
+
+  .wrapper {
+    width: 100%;
+  }
+
+  .progress-bar {
+    width: 90%;
+  }
+
+  .project-row {
+    flex-direction: column;
+  }
+
+  .project,
+  .project-wip,
+  .project-wip-4,
+  .project-wip-5,
+  .project-wip-6 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .project img {
+    width: 90%;
+    height: auto;
+  }
+
+  #footer {
+    margin-left: 0;
+  }
+
+  #return-button {
+    width: 35px;
+    height: 35px;
+  }
+
+  #return-button svg {
+    width: 25px;
+  }
+/*
+------------------------------------
+general
+------------------------------------
+*/
+#sidenav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--sidenav-bg-color);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: black 5px solid;
+}
+
+/*
+---------------------------------
+name and pic
+---------------------------------
+*/
+#profile-pic {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  border-radius: 100%;
+  border: black 5px solid;
+  height: 15%;
+}
+
+#my-name {
+  font-size: 20px;
+  color: white;
+}
+
+/*
+------------------------------------
+dividers hr
+------------------------------------
+*/
+#name-socials-divider,
+#socials-skills-divider {
+  margin-top: 45px;
+  margin-bottom: 45px;
+  width: 90%;
+  border-top: 1px solid white;
+}
+
+/*
+------------------------------------
+page links and socials
+------------------------------------
+*/
+#sidenav a {
+  color: var(--text-color); /* Set text color */
+  text-decoration: none; /* Remove underline */
+  margin-bottom: 10px; /* Add some space between each item */
+}
+
+#socials-list {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  line-height: 24px;
+}
+
+#socials-list li {
+  margin-bottom: 10px; /* Add some space between each social media icon */
+}
+
+#socials-list img {
+  margin-right: 5px; /* Add some space between the icon and the text */
+  vertical-align: middle;
+}
+
+#page-links li {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 20px 0;
+}
+
+/*
+------------------------------------
+hover
+------------------------------------
+*/
+#sidenav a {
+  color: var(--text-color); /* Set default text color */
+  text-decoration: none; /* Remove underline */
+  margin-bottom: 10px; /* Add some space between each item */
+  transition: color 0s, text-shadow 0.3s, text-decoration 0.3s; /* Add transition effect */
+}
+
+#sidenav a:hover {
+  color: white; /* Change text color on hover */
+  text-decoration: underline; /* Underline text on hover */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow on hover */
+}
+
+/*
+=================================================
+MAIN PAGE  
+=================================================
+*/
+#main-page {
+  margin-left: 0;
+  width: 100%;
+  padding-top: 100vh; /* Space for the GIF section */
+  overflow: hidden;
+}
+
+/*
+------------------------------------
+gif
+------------------------------------
+*/
+#gif-main-page {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+#gif-main-page img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(50%);
+}
+
+/*
+*------------------------------------
+* name and description
+*------------------------------------
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
+body {
+  font-family:'Roboto';
+  background-color: #131417;  
+}
+p {
+  text-shadow: 0 0 7px rgba(255,255,255,.3), 0 0 3px rgba(255,255,255,.3);
+}
+.container-gif-text {
+  color: #e5e5e5;
+  font-size: 2.26rem;
+  text-transform: uppercase;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animation {
+  height:54px;
+  overflow:hidden;
+  margin-left: 1rem;
+}
+
+.animation > div > div {
+  padding: 0.3rem 0.7rem;
+  height:2.5rem;
+  margin-bottom: 2.9rem;
+  display:inline-block;
+}
+
+.animation div:first-child {
+  animation: text-animation 8s infinite;
+}
+
+.first div {
+  background-color:#6b6b6b9c;
+  border: #000000 3px solid;
+}
+.second div {
+  background-color:#6b6b6b9c;
+  border: #000000 3px solid;
+}
+.third div {
+  background-color:#6b6b6b9c;
+  border: #000000 3px solid;
+}
+
+@keyframes text-animation {
+  0% {margin-top: 0;}
+  10% {margin-top: 0;}
+  20% {margin-top: -5.62rem;}
+  30% {margin-top: -5.62rem;}
+  40% {margin-top: -11.24rem;}
+  60% {margin-top: -11.24rem;}
+  70% {margin-top: -5.62rem;}
+  80% {margin-top: -5.62rem;}
+  90% {margin-top: 0;}
+  100% {margin-top: 0;}
+}
+
+/*
+=================================================
+ABOUT ME
+=================================================
+*/
+/*
+------------------------------------
+about me main container
+------------------------------------
+*/
+#about-me-section {
+    background-color: var(--main-page-bg-color);
+    color: var(--text-color);
+    padding: 20px;
+  }
+  
+/*
+------------------------------------
+about me sub containers
+------------------------------------
+*/
+#about-me-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  #about-me-info-pic {
+    flex-shrink: 0;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+
+  #about-me-description {
+    flex-grow: 1;
+    margin-top: 0;
+  }
+
+/*
+------------------------------------
+personal info
+------------------------------------
+*/
+#personal-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+#personal-info-right, #personal-info-left {
+    width: 45%;
+  }
+/*
+------------------------------------
+personal info bar
+------------------------------------
+*/
+.wrapper {
+    margin-bottom: 20px;
+    background: var(--main-page-bg-color);
+    border-radius: 4px;
+  }
+  
+  .progress-bar {
+    height: 15px;
+    border-radius: 4px;
+    transition: width 0.4s ease;
+    width: 50%; /* default value */
+  }
+
+  
+  #work-level {
+    background-color: #FFD700;
+  }
+  
+  #sleep-level {
+    background-color: #800080;
+  }
+  
+  #play-level {
+    background-color: #FF0000;
+  }
+  
+  #study-level {
+    background-color: #FFFF00;
+  }
+  
+  #friends-level {
+    background-color: #008000;
+  }
+  
+  #family-level {
+    background-color: #0000FF;
+  }
+  
+/*
+------------------------------------
+personal info p and h
+------------------------------------
+*/
+#personal-info p {
+    margin-top: 0;
+  }
+  
+  #personal-info h4 {
+    margin-bottom: 10px;
+  }
+
+/*
+=================================================
+SKILLS
+=================================================
+*/
+
+#skills-section-container {
+  background-color: var(--footer-and-pj-bg-color);
+  color: var(--text-color);
+  padding: 20px;
+  font-size: 18px;
+}
+
+#skills-section-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#skills-left,
+#skills-right {
+  width: 45%;
+  margin-bottom: 20px;
+}
+
+#skills li {
+  margin-bottom: 10px;
+}
+
+/*
+=================================================
+LANGUAGES
+=================================================
+*/
+#languages-section {
+    background-color: var(--main-page-bg-color);
+    color: var(--text-color);
+    padding: 20px;
+  }
+
+  #languages-section h2 {
+    text-align: center;
+  }
+  
+  #languages-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #languages-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  #languages-list img {
+    margin-right: 10px;
+  }
+/*
+=================================================
+PROJECTS
+=================================================
+*/
+#project-section {
+    background-color: var(--footer-and-pj-bg-color);
+    color: var(--text-color);
+    padding: 20px;
+  }
+  
+  #project-section h2 {
+    text-align: center;
+  }
+  
+  .project-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .project {
+    flex: 0 0 31%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .project img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .project h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  .project p {
+    font-size: 1rem;
+    padding: 0 10px;
+    margin-bottom: 10px;
+  }
+  
+  .project a {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--text-color); /* Adjust text color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0s, text-shadow 0.3s, text-decoration 0.3s; /* Add transition effect */
+  }
+  
+  .project a:hover {
+    color: white; /* Change text color on hover */
+    text-decoration: underline; /* Underline text on hover */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow on hover */
+  }
+
+/*
+=================================================
+PROJECT WIP
+=================================================
+*/
+#project-wip-section {
+  background-color: var(--main-page-bg-color);
+  color: var(--text-color);
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+#project-wip-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.project-wip {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.project-wip-4,
+.project-wip-5,
+.project-wip-6 {
+  flex: 0 0 31%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.project-wip img {
+  width: 100%;
+  height: auto;
+}
+
+.project-wip h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.project-wip p {
+  font-size: 1rem;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+
+.project-wip a {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--text-color); /* Adjust text color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0s, text-shadow 0.3s, text-decoration 0.3s; /* Add transition effect */
+}
+
+.project-wip a:hover {
+  color: white; /* Change text color on hover */
+  text-decoration: underline; /* Underline text on hover */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow on hover */
+}
+
+/*
+=================================================
+RETURN BUTTON
+=================================================
+*/
+#return-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+    border: #000000 3px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 999; /* Ensure the button stays above other content */
+  }
+  
+  #return-button svg {
+    width: 30px; /* Adjust the size of the icon */
+    height: auto; /* Maintain aspect ratio */
+    filter: invert(100%); /* Invert the color of the icon */
+    translate: 7px 6px;
+  }
+  
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100%);
+    }
+    60% {
+      transform: translateX(0%);
+    }
+    80% {
+      transform: translateX(8%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+/*
+=================================================
+FOOTER
+=================================================
+*/
+#footer {
+    background-color: var(--footer-and-pj-bg-color);
+    color: var(--text-color);
+    padding: 20px;
+    text-align: center;
+    border-top: 5px solid black;
+  }
+
